@@ -23,12 +23,10 @@ programa {
 
         //Fibonacci
         fibonnaci(num)
-        se(num>9999){
-          escreva("\nNúmero mto grande para mostrá-lo invertido...")
-        }senao{
-          num_novo = invertido(num)
-          escreva("\n\nNúmero invertido: ",num_novo)
-        }
+        
+        num_novo = invertido(num)
+        escreva("\n\nNúmero invertido: ",num_novo)
+        
         fatorial = calFatorial(num)
         escreva("\nFatorial de ",num,": ",fatorial,"\n")
 
@@ -73,19 +71,12 @@ programa {
   funcao inteiro invertido(inteiro n){
     inteiro nv, unidade, dezena, centena, milhar
 
-    unidade = n % 10
-    dezena = (n%100) / 10
-    centena = (n % 1000) / 100
-    milhar = n / 1000
-
-    se(n < 10){
-      nv = n
-    }senao se((n > 9) e (n <99)){
-      nv = unidade * 10 + dezena
-    }senao se ((n > 99) e (n < 999)){
-      nv = unidade * 100 + dezena * 10 + centena
-    }senao se ((n > 999) e (n < 9999)){
-      nv = unidade * 1000 + dezena * 100 + centena * 10 + milhar
+    inteiro invertido, resto
+    invertido = 0
+    enquanto(n> 0){
+      resto = n % 10
+      invertido = (invertido * 10) + resto
+      n = n / 10
     }
     retorne nv 
   }
