@@ -1,8 +1,7 @@
 programa {
   funcao inicio() {
-    inteiro num, num_novo
-    inteiro unidade, dezena, centena ,milhar
-
+    inteiro num, invertido
+    inteiro resto
    escreva("Digite um número: ")
     leia(num)
     invertido = 0
